@@ -138,3 +138,4 @@ typings/
 .next-export/
 out/
 build/
+.netlify/
