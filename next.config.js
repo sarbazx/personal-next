@@ -1,2 +1,11 @@
-const withSass = require("@zeit/next-sass");
-module.exports = withSass();
+const withCSS = require('@zeit/next-css');
+
+module.exports = withCSS({
+  webpack: cfg => {
+    cfg.module.rules.push({
+      test: /\.md$/,
+      use: 'frontmatter-markdown-loader'
+    });
+    return cfg;
+  }
+});
